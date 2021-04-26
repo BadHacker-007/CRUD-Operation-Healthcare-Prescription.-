@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operation</title>
+</head>
+<body>
+    <center>
+        <h1>Insert Record Into PostgreSQL</h1>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Patient Name</td>
+                <td><input type="text" placeholder="Enter Patient Name.." name="patientname"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="text" placeholder="Enter Patient Gender.." name="gender"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" placeholder="Enter Patient Age.." name="age"></td>
+            </tr>
+            <tr>
+                <td>Medicine Name</td>
+                <td><input type="text" placeholder="Enter Medicine Name.." name="medicinename"></td>
+            </tr>
+            <tr>
+                <td>Prescribed by</td>
+                <td><input type="text" placeholder="Prescribed by.." name="empname"></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td><input type="text" placeholder="Amount" name="price"></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="text" placeholder="Amount" name="prescription_date"></td>
+            </tr>
+        </table>
+        {% if messages %}
+        {% for mess in messages %}
+        <b style="color: green";>{{mess}}</b>
+        {% endfor %}
+        {% endif %}
+    </form>
+    </center>
+</body>
+</html>
