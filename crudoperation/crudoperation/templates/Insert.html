@@ -15,38 +15,59 @@
         <table border="1">
             <tr>
                 <td>Patient Name</td>
-                <td><input type="text" placeholder="Enter Patient Name.." name="patientname"></td>
+                <td><input type="text" placeholder="Enter Patient Name" name="patientname" ></td>
             </tr>
             <tr>
                 <td>Gender</td>
-                <td><input type="text" placeholder="Enter Patient Gender.." name="gender"></td>
+                <td><input type="radio" name="gender" value="M">Male |
+                <input type="radio" name="gender" value="F">Female</td>
             </tr>
             <tr>
                 <td>Age</td>
-                <td><input type="text" placeholder="Enter Patient Age.." name="age"></td>
+                <td>
+                    <input type="text" placeholder="Enter Patient Age" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" name="age" />
+                </td>
             </tr>
             <tr>
                 <td>Medicine Name</td>
-                <td><input type="text" placeholder="Enter Medicine Name.." name="medicinename"></td>
+                <td><input type="checkbox" name="medicinename">Aspirin
+                    <input type="checkbox" name="medicinename">Norepinephrine 
+                    <input type="checkbox" name="medicinename">Promethazine topical gel
+                    <input type="checkbox" name="medicinename">Hydrocortisone
+                    <input type="checkbox" name="medicinename">Ketoconazole</td>
             </tr>
             <tr>
                 <td>Prescribed by</td>
-                <td><input type="text" placeholder="Prescribed by.." name="empname"></td>
+                <td><select name="empname">
+                    <option selected disabled=true>--Select The Doctor--</option>
+                    <option>Dr Tanuj Pandey(Gynaecologist)</option>
+                    <option>Dr Akshat Jain(Cardiology)</option>
+                    <option>Dr Titas Das(Orthopedic)</option>
+                </select></td>
             </tr>
             <tr>
                 <td>Amount</td>
-                <td><input type="text" placeholder="Amount" name="price"></td>
+                <td>₹
+                    <input type="text" placeholder="Enter the Amount" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" name="price" />
+                </td>
+                
             </tr>
             <tr>
                 <td>Date</td>
-                <td><input type="text" placeholder="Amount" name="prescription_date"></td>
+                <td><input type="date" placeholder="Date" name="prescription_date"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Insert"></td>
+                <td>  
+                    {% if messages %}
+                    {% for mess in messages %}
+                    <b style="color: green";>{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
             </tr>
         </table>
-        {% if messages %}
-        {% for mess in messages %}
-        <b style="color: green";>{{mess}}</b>
-        {% endfor %}
-        {% endif %}
+      
     </form>
     </center>
 </body>

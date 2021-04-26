@@ -18,7 +18,7 @@ def Insertemp(request):
             saverecord.price=request.POST.get('price')
             saverecord.prescription_date=request.POST.get('prescription_date')
             saverecord.save()
-            messages.success(request,'prescription'+saverecord.patientname+'Is Saved Successfully..!')
+            messages.success(request,saverecord.patientname+  ' Prescription Is Saved Successfully..!')
             return render(request,'Insert.html')
         else:
             return render(request,'Insert.html')
