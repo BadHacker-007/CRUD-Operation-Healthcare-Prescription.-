@@ -33,7 +33,7 @@
                 <td>{{result.price}}</td>
                 <td>{{result.prescription_date}}</td>
                 <td><a href="Edit/{{result.id}}">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td><a href="Delete/{{result.id}}" onclick="return confirmation('Are You Sure You Want To Delete The record?')">Delete</a></td>
             </tr>
             {% endfor %}
         </table>
