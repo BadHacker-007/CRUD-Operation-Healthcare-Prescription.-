@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operation</title>
+</head>
+<body>
+    <center>
+        <h1>Edit Prescription</h1>
+        <hr/>
+        <from method="POST" action="/Update/{{EmpModel.id}}">
+            {% csrf_token %}
+        <table border="1">
+           <tr>
+               <td>Patient Id</td>
+               <td><input type="text" name="id" value="{{EmpModel.id}}" readonly></td>
+           </tr>
+           <tr>
+               <td>Patient Name</td>
+               <td><input type="text" name="patientname" value="{{EmpModel.patientname}}" ></td>
+           </tr>
+           <tr>
+               <td>Gender</td>
+               <td><input type="text" name="gender" value="{{EmpModel.gender}}"></td>
+           </tr>
+           <tr>
+               <td>Age</td>
+               <td><input type="number" name="age" value="{{EmpModel.age}}"></td>
+           </tr>
+           <tr>
+               <td>Medicine Name</td>
+               <td><input type="text" name="medicinename" value="{{EmpModel.medicinename}}" ></td>
+           </tr>
+           <tr>
+               <td>Prescribed by</td>
+               <td><input type="text" name="empname" value="{{EmpModel.empname}}" ></td>
+           </tr>
+           <tr>
+               <td>Amount</td>
+               <td><input type="number" name="price" value="{{EmpModel.price}}"></td>
+           </tr>
+           <tr>
+               <td>Date</td>
+               <td><input type="date" name="prescription_date" value="{{EmpModel.prescription_date}}"></td>
+           </tr>
+           <tr>
+               <td><input type="submit" value="Update Record"></td>
+               <td>  {% if messages %}
+                {% for mess in messages %}
+                <b style="color: green";>{{mess}}</b>
+                {% endfor %}
+                {% endif %}
+                </td>
+           </tr>
+        </table>
+        <a href="{% url 'showemp' %}">Go to Home</a>
+        </from>
+    </center>
+</body>
+</html>

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crudoperation'
+    'crud'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'crudoperation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': ['crud/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

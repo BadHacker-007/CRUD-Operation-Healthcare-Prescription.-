@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class EmpModel(models.Model):
     patientname = models.CharField(max_length=100)
     gender = models.CharField(max_length=1)

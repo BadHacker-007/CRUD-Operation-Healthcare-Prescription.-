@@ -48,7 +48,7 @@
             <tr>
                 <td>Amount</td>
                 <td>₹
-                    <input type="number" placeholder="Enter the Amount" name="price" />
+                    <input type="number" placeholder="Enter the Amount" step="0.01" min="0" max="100" name="price" />
                 </td>
                 
             </tr>
@@ -67,7 +67,7 @@
                 </td>
             </tr>
         </table>
-      
+        <a href="{% url 'showemp' %}">Home Page</a>
     </form>
     </center>
 </body>
