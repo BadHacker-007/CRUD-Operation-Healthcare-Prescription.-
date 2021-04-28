@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Operation</title>
 </head>
+
 <body>
     <center>
         <h1>Insert Record Into PostgreSQL</h1>
-        <hr/>
+        <hr />
         <form method="POST">
             {% csrf_token %}
-        <table border="1">
-            <tr>
-                <td>Patient Name</td>
-                <td><input type="text" placeholder="Enter Patient Name" name="patientname" ></td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td><input type="radio" name="gender" value="M">Male |
-                <input type="radio" name="gender" value="F">Female</td>
-            </tr>
-            <tr>
-                <td>Age</td>
-                <td>
-                    <input type="text" placeholder="Enter Patient Age" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" name="age" />
-                </td>
-            </tr>
-            <tr>
-                <td>Medicine Name</td>
-                <td><input type="checkbox" name="medicinename" value="Aspirin">Aspirin
-                    <input type="checkbox" name="medicinename" value="Norepinephrine">Norepinephrine 
-                    <input type="checkbox" name="medicinename" value="Promethazine topical gel">Promethazine topical gel
-                    <input type="checkbox" name="medicinename" value="Hydrocortisone">Hydrocortisone
-                    <input type="checkbox" name="medicinename" value="Ketoconazole">Ketoconazole</td>
-            </tr>
-            <tr>
-                <td>Prescribed by</td>
-                <td><select name="empname">
-                    <option selected disabled=true>--Select The Doctor--</option>
-                    <option>Dr Tanuj Pandey(Gynaecologist)</option>
-                    <option>Dr Akshat Jain(Cardiology)</option>
-                    <option>Dr Titas Das(Orthopedic)</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td>Amount</td>
-                <td>₹
-                    <input type="number" placeholder="Enter the Amount" step="0.01" min="0" max="100" name="price" />
-                </td>
-                
-            </tr>
-            <tr>
-                <td>Date</td>
-                <td><input type="date" placeholder="Date" name="prescription_date"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Insert"></td>
-                <td>  
-                    {% if messages %}
-                    {% for mess in messages %}
-                    <b style="color: green";>{{mess}}</b>
-                    {% endfor %}
-                    {% endif %}
-                </td>
-            </tr>
-        </table>
-        <a href="{% url 'showemp' %}">Home Page</a>
-    </form>
+            <table border="1">
+                <tr>
+                    <td>Patient Name</td>
+                    <td><input type="text" placeholder="Enter Patient Name" name="patientname"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="radio" name="gender" value="M">Male |
+                        <input type="radio" name="gender" value="F">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="text" placeholder="Enter Patient Age"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            name="age" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medicine Name</td>
+                    <td><input type="checkbox" name="medicinename" value="Aspirin">Aspirin
+                        <input type="checkbox" name="medicinename" value="Norepinephrine">Norepinephrine
+                        <input type="checkbox" name="medicinename" value="Promethazine topical gel">Promethazine topical
+                        gel
+                        <input type="checkbox" name="medicinename" value="Hydrocortisone">Hydrocortisone
+                        <input type="checkbox" name="medicinename" value="Ketoconazole">Ketoconazole
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prescribed by</td>
+                    <td><select name="empname">
+                            <option selected disabled=true>--Select The Doctor--</option>
+                            <option>Dr Tanuj Pandey(Gynaecologist)</option>
+                            <option>Dr Akshat Jain(Cardiology)</option>
+                            <option>Dr Titas Das(Orthopedic)</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td>₹
+                        <input type="number" placeholder="Enter the Amount" step="0.01" min="0" max="100"
+                            name="price" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><input type="date" placeholder="Date" name="prescription_date"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Insert"> </td>
+                    <td>
+                        {% if messages %}
+                        {% for mess in messages %}
+                        <b style="color: green" ;>{{mess}}</b>
+                        {% endfor %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+            <a href="{% url 'showemp' %}">Home Page</a>
+        </form>
     </center>
 </body>
+
 </html>

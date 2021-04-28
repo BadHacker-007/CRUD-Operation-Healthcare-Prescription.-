@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import EmpModel
 from django.contrib import messages
-from crud.forms import Empforms
+from .forms import Empforms
 
 
 def showemp(request):
@@ -40,7 +40,7 @@ def updateemp(request,id):
     if form.is_valid():
         form.save()
         messages.success(request,'Record Updated')
-        return render(request,'Edit.html',{"EmpModel":Updateemp})
+        return render(request,'Edit.html',{"EmpModel": Updateemp})
 
 def Deleemp(request,id):
     delemployee=EmpModel.objects.get(id=id)

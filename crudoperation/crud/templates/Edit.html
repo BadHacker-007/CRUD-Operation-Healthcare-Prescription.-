@@ -10,7 +10,7 @@
     <center>
         <h1>Edit Prescription</h1>
         <hr/>
-        <from method="POST" action="/Update/{{EmpModel.id}}">
+        <form method="POST" action="/Update/{{EmpModel.id}}">
             {% csrf_token %}
         <table border="1">
            <tr>
@@ -27,7 +27,7 @@
            </tr>
            <tr>
                <td>Age</td>
-               <td><input type="number" name="age" value="{{EmpModel.age}}"></td>
+               <td><input type="text" name="age" value="{{EmpModel.age}}"></td>
            </tr>
            <tr>
                <td>Medicine Name</td>
@@ -39,14 +39,14 @@
            </tr>
            <tr>
                <td>Amount</td>
-               <td><input type="number" name="price" value="{{EmpModel.price}}"></td>
+               <td><input type="text" name="price" value="{{EmpModel.price}}"></td>
            </tr>
            <tr>
                <td>Date</td>
-               <td><input type="date" name="prescription_date" value="{{EmpModel.prescription_date}}"></td>
+               <td><input type="text" name="prescription_date" value="{{EmpModel.prescription_date}}"></td>
            </tr>
            <tr>
-               <td><input type="submit" value="Update Record"></td>
+               <td><input type="submit" value="Update Record"> </td>
                <td>  {% if messages %}
                 {% for mess in messages %}
                 <b style="color: green";>{{mess}}</b>
@@ -56,7 +56,7 @@
            </tr>
         </table>
         <a href="{% url 'showemp' %}">Go to Home</a>
-    </from>
+    </form>
     </center>
 </body>
 </html>
