@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import EmpModel
 from django.contrib import messages
 from .forms import Empforms
+from django.http import Http404
 
 
 def showemp(request):
@@ -34,16 +35,21 @@ def Editemp(request, id):
     editempobj = EmpModel.objects.get(id=id)
     return render(request, 'Edit.html', {"EmpModel": editempobj})
 
-def updateemp(request,id):
-    Updateemp=EmpModel.objects.get(id=id)
-    form=Empforms(request.POST,instance=Updateemp)
+
+def updateemp(request, id):
+    Updateemp = EmpModel.objects.get(id=id)
+    form = Empforms(request.POST, instance=Updateemp)
     if form.is_valid():
         form.save()
-        messages.success(request,'Record Updated')
-        return render(request,'Edit.html',{"EmpModel": Updateemp})
+        messages.success(request, 'Record Updated')
+        return render(request, 'Edit.html', {"EmpModel": Updateemp})
+    else:
+            # Do something in case if form is not valid
+            raise Http404 
 
-def Deleemp(request,id):
-    delemployee=EmpModel.objects.get(id=id)
+
+def Deleemp(request, id):
+    delemployee = EmpModel.objects.get(id=id)
     delemployee.delete()
-    showdata=EmpModel.objects.all()
-    return render(request,"index.html",{"EmpModel":showdata})
+    showdata = EmpModel.objects.all()
+    return render(request, "index.html", {"EmpModel": showdata})
