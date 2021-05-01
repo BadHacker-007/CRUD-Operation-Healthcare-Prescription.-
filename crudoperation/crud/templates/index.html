@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Operation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
     <center>
-        <h1>CRUD With PostgreSQL</h1>
+        <h1>Health Prescription CRUD</h1>
         <hr/>
-        <a href="{% url 'Insertemp' %}">Create New Prescription</a>
+        <a href="{% url 'Insertemp' %}" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark">Create New Prescription</a>
         <table border="1">
             <tr>
                 <th>Patient Id</th>
@@ -32,11 +35,12 @@
                 <td>{{result.empname}}</td>
                 <td>{{result.price}}</td>
                 <td>{{result.prescription_date}}</td>
-                <td><a href="Edit/{{result.id}}">Edit</a></td>
-                <td><a href="Delete/{{result.id}}" onclick="return confirmation('Are You Sure You Want To Delete The record?')">Delete</a></td>
+                <a href="Edit/{{result.id}}" class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">Edit</a>
+                <td><a href="Delete/{{result.id}}" class="btn btn-outline-danger btn-rounded" data-mdb-ripple-color="dark">Delete</a></td>
             </tr>
             {% endfor %}
         </table>
     </center>
 </body>
+
 </html>

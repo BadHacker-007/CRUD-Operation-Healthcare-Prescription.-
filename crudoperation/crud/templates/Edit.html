@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Operation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,43 +19,52 @@
                 <tr>
                     <td>Patient Id</td>
                     <td><input type="text" name="id" value="{{EmpModel.id}}" readonly></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Patient Name</td>
                     <td><input type="text" name="patientname" value="{{EmpModel.patientname}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td><input type="text" name="gender" value="{{EmpModel.gender}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Age</td>
                     <td><input type="text" name="age" value="{{EmpModel.age}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Medicine Name</td>
                     <td><input type="text" name="medicinename" value="{{EmpModel.medicinename}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Prescribed by</td>
                     <td><input type="text" name="empname" value="{{EmpModel.empname}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Amount</td>
                     <td><input type="text" name="price" value="{{EmpModel.price}}"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Date</td>
                     <td><input type="text" name="prescription_date" value="{{EmpModel.prescription_date}}"></td>
+                    <td>yyyy-mm-dd Format</td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Update Record"> </td>
+                    <td><input type="submit" value="Update Record" class="btn btn-primary"> </td>
                     <td> {% if messages %} {% for mess in messages %}
                         <b style="color: green" ;>{{mess}}</b> {% endfor %} {% endif %}
                     </td>
+                    <td></td>
                 </tr>
             </table>
-            <a href="{% url 'showemp' %}">Go to Home</a>
+            <a href="{% url 'showemp' %}" class="btn btn-outline-info" data-mdb-ripple-color="dark">Go to Home</a>
         </form>
     </center>
 </body>
