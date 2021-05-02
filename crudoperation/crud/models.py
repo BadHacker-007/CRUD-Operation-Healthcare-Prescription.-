@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.sites.models import Site
 
 
 class EmpModel(models.Model):
@@ -12,6 +12,7 @@ class EmpModel(models.Model):
     prescription_date = models.DateField()
     patientpic = models.ImageField(upload_to='images/')
     history = models.BooleanField()
+    site = models.ForeignKey(Site, blank=True, null=True, on_delete=models.CASCADE)
 
 
     class Meta:
