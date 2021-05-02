@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crudoperation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pres',
+        'NAME': 'capstone',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
