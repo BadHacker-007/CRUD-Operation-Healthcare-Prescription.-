@@ -12,7 +12,7 @@ def showemp(request):
 
 def Insertemp(request):
     if request.method == "POST":
-        if request.POST.get('patientname') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('medicinename') and request.POST.get('empname') and request.POST.get('price') and request.POST.get('prescription_date'):
+        if request.POST.get('patientname') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('medicinename') and request.POST.get('empname') and request.POST.get('price') and request.POST.get('prescription_date') and request.FILES.get('patientpic') and request.POST.get('history'):
             saverecord = EmpModel()
             saverecord.patientname = request.POST.get('patientname')
             saverecord.gender = request.POST.get('gender')
@@ -20,8 +20,9 @@ def Insertemp(request):
             saverecord.medicinename = request.POST.get('medicinename')
             saverecord.empname = request.POST.get('empname')
             saverecord.price = request.POST.get('price')
-            saverecord.prescription_date = request.POST.get(
-                'prescription_date')
+            saverecord.prescription_date = request.POST.get('prescription_date')
+            saverecord.patientpic=request.FILES.get('patientpic')
+            saverecord.history=request.POST.get('history')
             saverecord.save()
             messages.success(request, saverecord.patientname +
                              ' Prescription Is Saved Successfully..!')

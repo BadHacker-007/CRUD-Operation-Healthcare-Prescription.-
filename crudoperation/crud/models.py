@@ -10,6 +10,9 @@ class EmpModel(models.Model):
     empname = models.CharField(max_length=100)
     price = models.FloatField()
     prescription_date = models.DateField()
+    patientpic = models.ImageField(upload_to='images/')
+    history = models.BooleanField()
+
 
     class Meta:
         db_table = "prescription"

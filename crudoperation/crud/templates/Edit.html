@@ -57,6 +57,16 @@
                     <td>yyyy-mm-dd Format</td>
                 </tr>
                 <tr>
+                    <td>Medical History</td>
+                    <td><input type="text" nam="history" value="{{EmpModel.history}}"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Patient Picture</td>
+                    <td> <input type="file" id="img" name="patientpic" accept="images/*" value="{{EmpModel.patientpic}}"> </td>
+                    <td>Only Upload If want to change</td>
+                </tr>
+                <tr>
                     <td><input type="submit" value="Update Record" class="btn btn-primary"> </td>
                     <td> {% if messages %} {% for mess in messages %}
                         <b style="color: green" ;>{{mess}}</b> {% endfor %} {% endif %}

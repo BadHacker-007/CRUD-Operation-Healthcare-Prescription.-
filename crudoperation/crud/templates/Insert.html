@@ -13,7 +13,7 @@
     <center>
         <h1>Insert Record</h1>
         <hr />
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <table border="1">
                 <tr>
@@ -62,6 +62,17 @@
                     <td><input type="date" placeholder="Date" name="prescription_date"></td>
                 </tr>
                 <tr>
+                    <td>Medical History </td>
+                    <td>
+                        <input type="radio" name="history" value="True">Yes <br>
+                        <input type="radio" name="history" value="False">No <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Patient Pic</td>
+                    <td><input type="file" id="img" name="patientpic" accept="images/*"></td>
+                </tr>
+                <tr>
                     <td>
                         <input type="submit" value="Insert" class="btn btn-primary btn-rounded"> </td>
                     <td>
@@ -74,5 +85,7 @@
         </form>
     </center>
 </body>
+
+</html>
 
 </html>

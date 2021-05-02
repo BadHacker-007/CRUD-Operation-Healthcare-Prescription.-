@@ -24,6 +24,8 @@
                 <th>Prescribed by</th>
                 <th>Amount</th>
                 <th>Date</th>
+                <th>Medical History</th>
+                <th>Patient Picture</th>
             </tr>
             {% for result in data %}
             <tr>
@@ -35,8 +37,11 @@
                 <td>{{result.empname}}</td>
                 <td>{{result.price}}</td>
                 <td>{{result.prescription_date}}</td>
-                <a href="Edit/{{result.id}}" class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">Edit</a>
+                <td>{{result.history}}</td>
+                <td><img src="{{result.patientpic}}"> {{result.patientpic}}</td>
+                <td><a href="Edit/{{result.id}}" class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">Edit</a></td>
                 <td><a href="Delete/{{result.id}}" class="btn btn-outline-danger btn-rounded" data-mdb-ripple-color="dark">Delete</a></td>
+
             </tr>
             {% endfor %}
         </table>
