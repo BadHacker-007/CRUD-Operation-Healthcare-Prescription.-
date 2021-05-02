@@ -4,6 +4,7 @@ A CRUD Project on the Healthcare Prescription Using Function Based View in Djang
 
 #### Authors
 <a href = 'https://github.com/BadHacker-007'> <img src = 'https://avatars.githubusercontent.com/u/65851356?v=4' width = '100' height = '100'> </a>
+| --- |
 <a href = 'https://github.com/BadHacker-007'> Anup Mishra </a>
 
 ## License
