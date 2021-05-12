@@ -1,4 +1,6 @@
-<h1> CRUD-Operation-Healthcare-Prescription<a href = 'https://www.python.org/'> <img src = 'http://ForTheBadge.com/images/badges/made-with-python.svg' align = 'right'> </a></h1>
+<h1>Healthcare Prescription CRUD</h1>
+<h3> Python Packages Used <a href = 'https://www.python.org/'> <img src = 'http://ForTheBadge.com/images/badges/made-with-python.svg' align = 'right'> </a> </h3>
+
 <br>
 
 <p>A CRUD Project on the Healthcare Prescription Using Function Based View in Django</p>
